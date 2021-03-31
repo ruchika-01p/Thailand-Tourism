@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Thailand Tourism</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color:black;
+    background-color:lightgray;
+  }
+  .column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  h1,h2{
+    color:black;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    
+    color: #fff;
+    padding: 100px 100px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: black;
+    font-size:50px;
+  }
+  .logo {
+    color:black;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: black;
+  }
+  .carousel-indicators li {
+    border-color:black;
+  }
+  .carousel-indicators li.active {
+    background-color: black;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid black;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid black;
+    background-color: #fff !important;
+    color: black;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: black !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color:black;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  table,th,td{
+                border:1px solid black;
+                border-collapse: collapse;
+                padding:5px;
+            }
+            table th{
+                font-weight: bold;
+                text-align:center;
+            }
+            table td{
+                text-align:center;
+            }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#overview">OVERVIEW</a></li>
+        <li><a href="#placestovisit">PLACES TO VISIT</a></li>
+        <li><a href="#packages">PACKAGES</a></li>
+        <li><a href="#besttimetovisit">BEST TIME TO VISIT</a></li>
+        <li><a href="#howtoreach">HOW TO REACH</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active"><div class="container">
+       <center> <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" width="1000px" height="370px"></center>
+       <div class="centered"><h1>Amazing Thailand!</h1> 
+        <h3>Where Fantasy comes to Life...</h3> </div>
+</div>
+
+      </div>
+      <div class="item">
+        <div class="container">
+          <center> <img src="https://i.pinimg.com/originals/a0/9b/2a/a09b2a2a9794de868d12d28cea0f50ea.png" width="1000px" height="370px"></center>
+          <div class="centered"><h1>Amazing Thailand!</h1> 
+           <h3>Where Fantasy comes to Life...</h3> </div>
+   </div>
+   
+      </div>
+      <div class="item">
+        <div class="container">
+          <center> <img src="https://images.unsplash.com/photo-1559197062-a2b77865dc66?ixlib=rb-1.2.1&w=1000&q=80" width="1000px" height="370px"></center>
+          <div class="centered"><h1>Amazing Thailand!</h1> 
+           <h3>Where Fantasy comes to Life...</h3> </div>
+   </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+  
+</div>
+
+<!-- Container (overview Section) -->
+<div id="overview" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>The Gateway to Southeast Asia</h2><br>
+      <h4>Thailand Tourism</h4><br>
+      <p>Thailand, a dreamy beachside paradise, is a country that has managed to retain its cultural integrity in spite of being a major tourist destination.
+One can find everything here - from pristine beaches to dense forests, ancient monasteries to coral reefs, from Buddhist monks to floating markets and finally the fragrant and rich food to treat your taste buds.
+        Bangkok, the capital, in central Thailand, is regarded as a modern hub of various cultures, faiths and experiences. Chiang Mai and Chiang Rai to the north cater to those looking the quiet countryside and to spend time in the wild.
+        Down south, beach destinations such as Phuket, Krabi and Koh Samui offer some of the best tropical experiences by the sea. On the western end, the Hua Hin region is popular for resorts where one can relax luxuriously.
+        Finally, towards the east, Ubon Ratchathani is a spiritual and historical escape where one can immersively learn about Buddhist and Thai culture.
+        </p>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <img src="https://images.unsplash.com/photo-1493863154320-7fe91fec2e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" width="400" height="400">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Container (places to visit Section) -->
+<div id="placestovisit" class="container-fluid">
+  <h2>Best Tourist Attractions</h2>
+  <div class="row">
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Bangkok" style="width:80%">
+      <figcaption>Bangkok</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1568656038091-661f9d284b72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Pattaya" style="width:90%">
+      <figcaption>Pattaya</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Krabi" style="width:90%">
+      <figcaption>Krabi</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1521277921204-9d811f8d5fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="phuket" style="width:80%">
+      <figcaption> Phuket</figcaption>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1560359614-870d1a7ea91d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="hua hin" style="width:90%">
+      <figcaption> Hua Hin </figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="phiphi islands" style="width:80%">
+      <figcaption> Phi Phi islands</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1519666545584-8b5c51caf019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="ching mai" style="width:80%">
+      <figcaption> Chiang Mai</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="koh pha ngan" style="width:80%">
+      <figcaption>Koh Pha Ngan</figcaption>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1562428258-806dca6784bf?ixlib=rb-1.2.1&w=1000&q=80" style="width:90%;">
+      <figcaption>Similan Islands</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1520961810802-7f0a32de665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="khao sok np" style="width:90%">
+      <figcaption>Khao Sok National Park</figcaption>
+  </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1579531886640-866571a1629a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" style="width:80%">
+      <figcaption>Sukhotai</figcaption>
+    </div>
+    <div class="column">
+      <img src="https://thethaiger.com/wp-content/uploads/2018/12/d09f08637b90fcf83130304fe4a76e8c.jpeg" style="width:90%">
+      <figcaption>Khao Yai National Park</figcaption>
+    </div>
+</div>
+
+<!-- Container ( Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Yes, we built Paris</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="newyork.jpg" alt="New York" width="400" height="300">
+        <p><strong>New York</strong></p>
+        <p>We built New York</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>San Francisco</strong></p>
+        <p>Yes, San Fran is ours</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h1>What our customers say</h1>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (packages Section) -->
+<div id="packages" class="container-fluid">
+  <div class="text-center">
+    <h2>Packages</h2>
+    <h4>Best Plans that fits into your Budget</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1 style="color:white;">Combined with </h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Bangkok</strong> </p>
+          <p><strong>Phuket</strong> </p>
+          <p><strong>Krabi</strong> </p>
+          <p><strong>Pattaya</strong> </p>
+          <p><strong>Hua Hin</strong> </p>
+        </div>
+        <div class="panel-footer">
+          
+          <button class="btn btn-lg">Book Now</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1 style="color:white;">Duration</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>0 - 4 Days</strong> </p>
+          <p><strong>5 - 9 Days</strong></p>
+          <p><strong>10 - 15 Days</strong></p>
+          <p><strong>16 - 25 Days</strong></p>
+          <p><strong>25+ Days</strong></p>
+        </div>
+        <div class="panel-footer">
+          
+          <button class="btn btn-lg">Book Now</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1 style="color:white;">Price Range (per person)</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>0 - ₹10,000</strong> </p>
+          <p><strong>₹10,001 - ₹20,000</strong> </p>
+          <p><strong>₹20,001 - ₹50,000</strong> </p>
+          <p><strong>₹50000+</strong> </p>
+        </div>
+        <div class="panel-footer">
+          
+          <button class="btn btn-lg">Book Now</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<div id="besttimetovisit" class="container-fluid">
+  <h1>What is the best time to visit Thailand ?</h1>
+
+  <ul style="list-style-type:disc;">
+  <li>The <b>best time to visit Thailand is from November to February </b>which is the cool and dry season.</li><br>
+  <li>The period of April to June is the shoulder season when the rain starts to set in and temperatures hover around the late 20s to early 30s. Travel fares and hotel prices see a drop in this period making it a great time for budget traveling. July to October is the wet season charaterised with high rainfall and humidity. Many islands shut down during this period keeping safety in mind.
+  
+  Thailand can broadly be divided into three distinct geographic regions -
+  
+  1. The North and Central region
+  2. The Gulf of Thailand
+  3. Andaman Sea coast.</li><br>
+  <li><b>The best time to visit the Northern and Central region of Thailand is from October until January during summers.</b> The rest of the year receives monsoon spells with an increase in humidity levels.</li><br>
+  <li><b>December onwards until March would provide the ideal conditions for tourists hence making it the best time to visit the Gulf of Thailand.</b> This is an excellent time for water sports and other beach activities since the weather is pleasant and windy.</li><br>
+  <li><b>April and May are the hottest months of the year in Thailand.</b> The most pleasant time of the year on the west coast of Thailand is from November until March. The monsoon starts to kick in from May to Mid-October on the west coast. The climate in these regions varies significantly throughout the year.</li><br>
+  <li>The three distinct seasons of Thailand are summer, winter and monsoons. Depending on where in Thailand one visits, the length of these seasons vary. For instance, southern Thailand faces a longer monsoon season than the rest of the country.</li>
+  </ul>
+
+  <h1>Tourist Map Of Thailand</h1><br>
+
+<img src="https://i.pinimg.com/originals/dd/e7/08/dde70808df7b457e2a113544e231acb5.gif" height="500px" width="500px"/>
+<br><br>
+<h1>Monthly Weather In Thailand</h1>
+
+<table><center>
+<tr>
+<th>Month</th>
+<th>Avg. Min(c)</th>
+<th>Avg. Max(c)</th>
+</tr>
+<tr>
+<th>January</th>
+<td>21</td>
+<td>29</td>
+</tr>
+<tr>
+<th>February</th>
+<td>21</td>
+<td>31</td>
+</tr>
+<tr>
+<th>March</th>
+<td>23</td>
+<td>32</td>
+</tr>
+<tr>
+<th>April</th>
+<td>24</td>
+<td>32</td>
+</tr>
+<tr>
+<th>May</th>
+<td>24</td>
+<td>32</td>
+</tr>
+<tr>
+<th>June</th>
+<td>25</td>
+<td>32</td>
+</tr>
+<tr>
+<th>July</th>
+<td>24</td>
+<td>31</td>
+</tr>
+<tr>
+<th>August</th>
+<td>25</td>
+<td>32</td>
+</tr>
+<tr>
+<th>September</th>
+<td>24</td>
+<td>31</td>
+</tr>
+<tr>
+<th>October</th>
+<td>23</td>
+<td>31</td>
+</tr>
+<tr>
+<th>November</th>
+<td>23</td>
+<td>30</td>
+</tr>
+<tr>
+<th>December</th>
+<td>21</td>
+<td>29</td>
+</tr></center>
+</table>
+</div>
+
+
+<div id="howtoreach" class="container-fluid">
+  <h1>How To Reach Thailand</h1><br>
+<ul style="list-style-type:disc;">
+<li><b>Reaching Thailand by Air</b>
+The main international airports in Thailand are in Bangkok and Phuket. These are well-connected to all the countries. All the airlines that travel to Asia fly to Thailand. So there is no dearth of flight options. Other international airports are located in Krabi, Koh Samui, Chiang Mai and Hat Yai. These are connected via flights from the South-east Asian countries. The major national carrier in Thailand is Thai Airways, followed by Bangkok Airways.</li><br>
+<li><b>Reaching Thailand by Bus</b>There are regular buses from Singapore to Hat Yai.</li><br>
+<li><b>Reaching Thailand by Rail</b>Thailand has a single international train service operating between Butterworth and Kuala Lumpur in Malaysia that extends to Singapore. The train journey is not preferable as it takes almost 48 hours and requires you to change trains twice.</li><br>
+<li><b>Reaching Thailand by Road</b>There are six international border crossings from Cambodia. The busiest border crossing to get into Thailand is the Friendship Bridge across the Mekong from Laos. It is entirely possible to drive up to Thailand from Malaysia and Singapore, though not through rented vehicles. The main crossings between Thailand and Malaysia are Padang Besar and Sadao in Songkhla province.</li><br>
+<li><b>Reaching Thailand by Water</b>Ferries ply between Phuket and Indonesia in the months between November and May. Cruises from Hong Kong, Singapore, Australia and Europe make regular stops at Phuket and Laem Chabang (Bangkok).</li><br>
+</ul>
+</div>
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Nagpur,India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9307543819</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> pandharikarruchika@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit" style="background-color: black;color: white;">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
